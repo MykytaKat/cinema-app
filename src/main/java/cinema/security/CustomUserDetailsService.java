@@ -4,7 +4,6 @@ import static org.springframework.security.core.userdetails.User.withUsername;
 
 import cinema.model.User;
 import cinema.service.UserService;
-import java.util.Optional;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -22,11 +21,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> userOptional = userService.findByEmail(username);
-        if (userOptional.isEmpty()) {
-            throw new UsernameNotFoundException("User not found");
-        }
-        User user = userOptional.orElseThrow();
+        User user = userService.findByEmail(username).orElseThrow(() ->
+                new UsernameNotFoundException("Can't find user by email: " + username));
         UserBuilder userBuilder = withUsername(username);
         userBuilder.password(user.getPassword());
         userBuilder.authorities(user.getRoles()
