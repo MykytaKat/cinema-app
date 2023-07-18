@@ -106,4 +106,3 @@ After these steps, you need to fix tomcat. You need to select the artifact to de
 ![img_4.png](img_4.png)
 
 7. After starting Tomcat, you will be able to access your application by the URL
-8.
