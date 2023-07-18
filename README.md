@@ -1,35 +1,86 @@
-﻿# Cinema-app
+# Cinema-app
 
 REST web application for ticket reservation. It implements the main functions, such as:
 1. displaying movies that are currently at the box office
 2. shopping cart with the ability to add tickets to it and create an order based on the added tickets
 3. searching for available movie sessions by date
 
-### Detailed description of the functionality
+## Table of Contents
 
-- registration/login/logout
-- view cinema halls, movies, available movie-sessions
-- view/complete orders, buy tickets, view/update shopping cart as a user
-- add cinema halls, movies, find user by email, add/update/delete movie sessions as an admin
+[Functionality](#functionality)
 
-### Project structure 
+[Endpoints](#endpoints)
+
+[Project Structure](#project-structure)
+
+[Technologies Used](#technologies-used)
+
+[Instructions for Launching the Project](#instructions-for-launching-the-project)
+
+## Functionality
+
+The Cinema-app provides several key functions for users and administrators:
+
+ #### User Functionality:
+
+- Registration, login, and logout.
+- Viewing cinema halls, movies, and available movie sessions.
+- Adding tickets to the shopping cart and creating an order based on the added tickets.
+- Viewing and completing orders.
+- Buying tickets.
+- Viewing and updating the shopping cart.
+
+#### Admin Functionality:
+
+- Adding and managing cinema halls, movies, and movie sessions.
+- Finding users by their email address.
+
+## Endpoints
+
+The Cinema-app provides the following endpoints:
+
+#### User and Admin Endpoints:
+
+- POST: /register - User registration.
+- GET: /cinema-halls - View cinema halls.
+- GET: /movies - View movies.
+- GET: /movie-sessions/available - View available movie sessions.
+
+#### Admin-only Endpoints:
+
+- POST: /cinema-halls - Add a new cinema hall.
+- POST: /movies - Add a new movie.
+- POST: /movie-sessions - Add a new movie session.
+- PUT: /movie-sessions/{id} - Update a movie session.
+- DELETE: /movie-sessions/{id} - Delete a movie session.
+- GET: /users/by-email - Find a user by their email address.
+
+#### User-only Endpoints:
+
+- GET: /orders - View user's orders.
+- POST: /orders/complete - Complete an order.
+- PUT: /shopping-carts/movie-sessions - Update the shopping cart with movie sessions.
+- GET: /shopping-carts/by-user - View the shopping cart for a specific user.
+
+## Project structure
 
 - src/main/java - contains the entire source code of the program 
 - src/main/resources - contains properties for connecting to the database
 
-### Technologies used:
+## Technologies used:
+
 - Java 17
 - Tomcat 9.0.75
 - MySQL 8.0.22
 - Maven 3.1.1
 - Java Servlet 4.0.1
+- Spring 5.3.20
+- Spring-Web 5.3.20
+- Spring-Security 5.6.10
+- Hibernate5.6.14.Final
 - JDBC
-- Spring
-- Spring-Web
-- Spring-Security
-- Hibernate
 
-### Instructions for launching the project
+## Instructions for launching the project
 
 1. Clone this project from GitHub
 2. Install Apache Tomcat version 9.x.x. You can download it from the official Apache Tomcat website: https://tomcat.apache.org/download-90.cgi. Choose the appropriate installation package for your operating system. 
@@ -55,3 +106,4 @@ After these steps, you need to fix tomcat. You need to select the artifact to de
 ![img_4.png](img_4.png)
 
 7. After starting Tomcat, you will be able to access your application by the URL
+8.
