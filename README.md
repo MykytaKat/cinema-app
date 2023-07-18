@@ -77,7 +77,7 @@ The Cinema-app provides the following endpoints:
 - Spring 5.3.20
 - Spring-Web 5.3.20
 - Spring-Security 5.6.10
-- Hibernate5.6.14.Final
+- Hibernate 5.6.14.Final
 - JDBC
 
 ## Instructions for launching the project
